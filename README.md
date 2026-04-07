@@ -14,11 +14,11 @@
 
 <br/>
 
-## 🧑‍💻 About Me
+## About Me
 
 DevOps Engineer with **1+ year** of hands-on experience building and operating production-grade infrastructure across on-premise and cloud environments. Proven track record architecting **Kubernetes** clusters, implementing end-to-end **CI/CD** pipelines with security scanning, and deploying full observability stacks — serving **2,000+** users across **10+** servers with **99.9%** uptime. Passionate about automation, **DevSecOps** practices, and building reliable systems from the ground up.
 
-## 🛠️ Tech Stack & Skills
+## Tech Stack & Skills
 
 **Cloud & Infrastructure:**  
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=FF9900)
@@ -52,40 +52,3 @@ DevOps Engineer with **1+ year** of hands-on experience building and operating p
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-
-**Security, Networking & Tools:**  
-`Nginx`, `HAProxy`, `HashiCorp Vault`, `Trivy`, `SonarQube`, `SSL/TLS`, `Load Balancing`, `Firewalls`, `Linux`, `VMware`
-
-## 💼 Work Experience
-
-- **DevOps Fresher** @ 365 Ecosystem JSC *(Dec 2025 – Mar 2026)*
-  - Deployed Spring Boot/Vue.js apps with Nginx, GitLab CI/CD, Harbor, and parameterized Jenkins pipelines.
-- **DevOps Intern** @ Vietnam Academy of Science and Technology *(Sep 2025 – Nov 2025)*
-  - Deployed Flask to GCP via Pulumi, with GitHub Actions and Ansible.
-- **Founder & DevSecOps** @ Stagebrix *(Mar 2025 – Present)*
-  - Architected K8s cluster (10+ servers, 99.9% uptime). Built CI/CD with GitLab/Jenkins/ArgoCD + Security scanning (Trivy, SonarQube).
-- **Founder & DevSecOps** @ Gridkeel *(Oct 2024 – Present)*
-  - Implemented DevSecOps pipelines (CodeClimate, Snyk, Trivy, Arachni) and Docker/K8s/JFrog for hardware ecommerce infrastructure.
-- **DevOps Engineer** @ Freelancer (Anvernos) *(Jul 2024 – Aug 2025)*
-  - Built on-premise DevOps environments with Teleport, Vault, centralized logging (ELK), self-hosted GitLab/Harbor, and K8s.
-
-## 🎓 Education
-
-- **Master of Information Technology** - University of Nguyen Tat Thanh *(Jun 2025 – Present)*
-- **Bachelor of Software Engineering** - University of Nguyen Tat Thanh *(Sep 2022 – May 2026)*
-  - *Research: AI Agent for Automated Data Analysis using RAG*
-
-## 📈 GitHub Stats
-
-<div align="center">
-  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=raon9423&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9" />
-  <img height="160em" src="https://github-readme-streak-stats.herokuapp.com/?user=raon9423&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff" />
-</div>
-
----
-
-<div align="center">
-  <i>💬 Feel free to reach out for collaboration or just a chat about DevOps!</i>
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:0d1117&height=100&section=footer" width="100%" />
