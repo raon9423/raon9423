@@ -2,7 +2,7 @@
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:0d1117&height=200&section=header&text=Hi%20%F0%9F%91%8B%20I'm%20Luc%20Si%20Than&fontSize=36&fontColor=58a6ff&fontAlignY=35&desc=DevOps%20Engineer%20%7C%20Ho%20Chi%20Minh%20City,%20Vietnam%20%F0%9F%87%BB%F0%9F%87%B3&descSize=18&descColor=8b949e&descAlignY=55" width="100%" />
 
-  <br/><br/>
+  <br/>
 
   <a href="https://linkedin.com/in/than-luc-si-792a562b5"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
   <a href="mailto:lucsithanhd22@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=flat-square&logo=gmail&logoColor=white" /></a>
@@ -11,7 +11,7 @@
   <a href="https://gridkeel.com"><img src="https://img.shields.io/badge/Gridkeel-58A6FF?style=flat-square" /></a>
   <img src="https://komarev.com/ghpvc/?username=raon9423&style=flat-square&color=58a6ff" />
 
-  <br/><br/>
+  <br/>
 
   ## About Me
 
