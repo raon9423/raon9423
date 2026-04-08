@@ -1,0 +1,151 @@
+<svg width="100%" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090c10" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262d" stroke-width="1" />
+    </pattern>
+
+    <!-- Styles -->
+    <style>
+      .text-title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 34px; font-weight: 800; fill: #58a6ff; text-anchor: middle; letter-spacing: 1px; }
+      .text-subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 500; fill: #8b949e; text-anchor: middle; letter-spacing: 0.5px; }
+      .text-term { font-family: 'Courier New', Courier, monospace; font-size: 11px; fill: #3fb950; font-weight: bold; }
+      .server-box { fill: #1f2428; stroke: #30363d; stroke-width: 1.5; }
+      
+      /* Animations */
+      .blink-fast { animation: blink 1.2s infinite; }
+      .blink-slow { animation: blink 3s infinite; }
+      .blink-random { animation: blink 2.5s infinite; }
+      .pulse { animation: pulse 2s infinite; }
+      .dash-scroll { fill: none; stroke: #bb86fc; stroke-width: 1.5; stroke-dasharray: 6 6; animation: scrollDash 1.5s linear infinite; }
+      .dash-scroll-fast { fill: none; stroke: #3fb950; stroke-width: 1.5; stroke-dasharray: 6 6; animation: scrollDash 1s linear infinite; }
+
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+      }
+      @keyframes pulse {
+        0% { filter: drop-shadow(0 0 2px #58a6ff); stroke: #58a6ff; }
+        50% { filter: drop-shadow(0 0 8px #58a6ff); stroke: #79c0ff; }
+        100% { filter: drop-shadow(0 0 2px #58a6ff); stroke: #58a6ff; }
+      }
+      @keyframes scrollDash {
+        to { stroke-dashoffset: -12; }
+      }
+      
+      /* Typing effect on terminal */
+      .typing-1 { animation: typed 4s steps(40, end) infinite; }
+      .typing-2 { animation: typed2 4s steps(40, end) infinite; opacity: 0; }
+      
+      @keyframes typed {
+        0%, 10% { clip-path: inset(0 100% 0 0); }
+        30%, 100% { clip-path: inset(0 0 0 0); }
+      }
+      @keyframes typed2 {
+        0%, 40% { clip-path: inset(0 100% 0 0); opacity: 0; }
+        41% { opacity: 1; }
+        60%, 100% { clip-path: inset(0 0 0 0); opacity: 1; }
+      }
+    </style>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Layer -->
+  <rect width="100%" height="100%" fill="url(#bg)" rx="10" />
+  <rect width="100%" height="100%" fill="url(#grid)" rx="10" opacity="0.6" />
+
+  <!-- DEVOPS PIPELINE SECTION (Left side offset) -->
+  <g transform="translate(60, 40)">
+    <!-- Connection lines -->
+    <path class="dash-scroll" d="M 25 30 L 25 120" />
+    <path class="dash-scroll" d="M 25 80 L 100 80" />
+    <path class="dash-scroll" d="M 100 80 L 100 120" />
+
+    <!-- Node 1: Code -->
+    <circle cx="25" cy="30" r="14" fill="#0d1117" stroke="#8b949e" stroke-width="2" />
+    <text x="25" y="34" font-family="'Courier New', monospace" font-size="12" fill="#8b949e" text-anchor="middle" font-weight="bold">&lt;/&gt;</text>
+    
+    <!-- Node 2: CI/Build -->
+    <circle cx="25" cy="80" r="14" fill="#0d1117" stroke="#d29922" stroke-width="2" class="pulse" />
+    <circle cx="25" cy="80" r="6" fill="#d29922" />
+    
+    <!-- Node 3: Test/Sec -->
+    <circle cx="100" cy="80" r="14" fill="#0d1117" stroke="#e34c26" stroke-width="2" />
+    <path d="M 94 77 L 106 77 L 100 85 Z" fill="#e34c26" />
+    
+    <!-- Node 4: Deploy -->
+    <circle cx="25" cy="130" r="14" fill="#0d1117" stroke="#3fb950" stroke-width="2" />
+    <circle cx="25" cy="130" r="6" fill="#3fb950" class="blink-slow" />
+    
+    <!-- Node 5: Monitor -->
+    <circle cx="100" cy="130" r="14" fill="#0d1117" stroke="#58a6ff" stroke-width="2" />
+    <circle cx="100" cy="130" r="6" fill="#58a6ff" class="blink-fast" />
+  </g>
+
+  <!-- SERVERS SECTION (Right side) -->
+  <g transform="translate(580, 40)">
+    <!-- Terminal window floating behind -->
+    <rect x="-10" y="90" width="180" height="70" fill="#010409" stroke="#30363d" stroke-width="1.5" rx="4" />
+    <!-- Window buttons -->
+    <circle cx="5" cy="100" r="3.5" fill="#ff5f56" />
+    <circle cx="15" cy="100" r="3.5" fill="#ffbd2e" />
+    <circle cx="25" cy="100" r="3.5" fill="#27c93f" />
+    <g transform="translate(0, 118)">
+      <text x="5" y="0" class="text-term">~ kubectl get pods</text>
+      <text x="5" y="16" class="text-term typing-1" fill="#8b949e">NAME       STATUS   AGE</text>
+      <text x="5" y="30" class="text-term typing-2">frontend   Running  2d</text>
+    </g>
+
+    <!-- Rack 1 -->
+    <rect class="server-box" x="20" y="10" width="140" height="28" rx="2" />
+    <rect x="30" y="16" width="12" height="16" fill="#30363d" rx="1" />
+    <rect x="50" y="16" width="12" height="16" fill="#30363d" rx="1" />
+    <circle cx="130" cy="24" r="3.5" fill="#3fb950" class="blink-random" filter="url(#glow)"/>
+    <circle cx="145" cy="24" r="3.5" fill="#58a6ff" class="blink-slow" />
+
+    <!-- Rack 2 -->
+    <rect class="server-box" x="20" y="48" width="140" height="28" rx="2" />
+    <rect x="30" y="54" width="12" height="16" fill="#30363d" rx="1" />
+    <rect x="50" y="54" width="12" height="16" fill="#30363d" rx="1" />
+    <circle cx="130" cy="62" r="3.5" fill="#3fb950" class="blink-fast" filter="url(#glow)"/>
+    <circle cx="145" cy="62" r="3.5" fill="#f85149" class="blink-slow" filter="url(#glow)"/>
+  </g>
+
+  <!-- Center Connection lines (Data flowing to user) -->
+  <path class="dash-scroll-fast" d="M 170 150 Q 250 180 400 170" opacity="0.4" />
+  <path class="dash-scroll" d="M 570 60 Q 500 40 400 90" opacity="0.4" />
+
+  <!-- Main Center Text -->
+  <g transform="translate(400, 110)">
+    <circle cx="0" cy="-55" r="38" fill="#161b22" stroke="#30363d" stroke-width="2" />
+    <text x="0" y="-42" font-size="34" text-anchor="middle">👨🏻‍💻</text>
+    
+    <text x="0" y="15" class="text-title">Hi 👋 I'm Luc Si Than</text>
+    <text x="0" y="45" class="text-subtitle">DevOps Engineer | Ho Chi Minh City, Vietnam 🇻🇳</text>
+    
+    <!-- Badges / Tags -->
+    <g transform="translate(0, 65)">
+      <rect x="-115" y="0" width="70" height="24" rx="12" fill="#1f2428" stroke="#58a6ff" stroke-width="1.5" />
+      <text x="-80" y="16" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#58a6ff" text-anchor="middle">DevOps</text>
+      
+      <rect x="-35" y="0" width="90" height="24" rx="12" fill="#1f2428" stroke="#3fb950" stroke-width="1.5" />
+      <text x="10" y="16" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#3fb950" text-anchor="middle">Kubernetes</text>
+      
+      <rect x="65" y="0" width="85" height="24" rx="12" fill="#1f2428" stroke="#d29922" stroke-width="1.5" />
+      <text x="107" y="16" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#d29922" text-anchor="middle">DevSecOps</text>
+    </g>
+  </g>
+</svg>
