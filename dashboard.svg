@@ -1,0 +1,130 @@
+<svg width="100%" height="320" viewBox="0 0 1000 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e14" />
+      <stop offset="100%" stop-color="#05070a" />
+    </linearGradient>
+
+    <style>
+      .panel { fill: #161b22; stroke: #30363d; stroke-width: 1.5; rx: 8; }
+      
+      .title { font-family: -apple-system, sans-serif; font-size: 16px; font-weight: bold; fill: #8b949e; letter-spacing: 1px; }
+      .value-center { font-family: 'Courier New', monospace; font-size: 28px; font-weight: bold; fill: #c9d1d9; text-anchor: middle; }
+      .value-left { font-family: 'Courier New', monospace; font-size: 20px; font-weight: bold; fill: #c9d1d9; }
+      .label { font-family: -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #8b949e; text-transform: uppercase; }
+      .label-center { font-family: -apple-system, sans-serif; font-size: 11px; font-weight: bold; fill: #8b949e; text-transform: uppercase; text-anchor: middle; }
+
+      .grid-line { fill: none; stroke: #21262d; stroke-width: 1; }
+      .chart-line-green { fill: none; stroke: #3fb950; stroke-width: 2.5; filter: drop-shadow(0 0 3px #3fb950); }
+      .chart-line-blue { fill: none; stroke: #58a6ff; stroke-width: 2.5; filter: drop-shadow(0 0 3px #58a6ff); }
+
+      /* Animations */
+      .blink { animation: blinker 1.5s linear infinite; }
+      @keyframes blinker { 50% { opacity: 0.3; } }
+      
+      .chart-move { animation: slide 4s infinite linear; stroke-dasharray: 10 10; }
+      @keyframes slide { to { stroke-dashoffset: -20; } }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)" />
+
+  <!-- Background Grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" class="grid-line" opacity="0.3" />
+  </pattern>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+
+  <!-- ============================================== -->
+  <!-- PANEL 1: KUBERNETES & SYSTEM METRICS (Top Left) -->
+  <!-- ============================================== -->
+  <g transform="translate(30, 30)">
+    <rect class="panel" width="450" height="260" />
+    <circle cx="20" cy="25" r="4" fill="#58a6ff" class="blink" />
+    <text class="title" x="35" y="30">K8s Cluster / Sys Metrics</text>
+    
+    <!-- CPU Gauge -->
+    <path d="M 50 110 A 40 40 0 0 1 130 110" fill="none" stroke="#21262d" stroke-width="12" stroke-linecap="round" />
+    <path d="M 50 110 A 40 40 0 0 1 115 80" fill="none" stroke="#f85149" stroke-width="12" stroke-linecap="round" />
+    <text class="value-center" x="90" y="105" font-size="20">85%</text>
+    <text class="label-center" x="90" y="130">CPU Usage</text>
+
+    <!-- RAM Gauge -->
+    <path d="M 180 110 A 40 40 0 0 1 260 110" fill="none" stroke="#21262d" stroke-width="12" stroke-linecap="round" />
+    <path d="M 180 110 A 40 40 0 0 1 240 75" fill="none" stroke="#d29922" stroke-width="12" stroke-linecap="round" />
+    <text class="value-center" x="220" y="105" font-size="20">64%</text>
+    <text class="label-center" x="220" y="130">RAM Usage</text>
+
+    <!-- Network Line Chart -->
+    <text class="label" x="35" y="160">API Latency (ms)</text>
+    <text class="value-left" x="35" y="190" font-size="28" fill="#3fb950">42ms</text>
+    <path class="chart-line-green" d="M 150 190 L 170 170 L 190 180 L 210 160 L 230 190 L 250 150 L 270 140 L 290 160 L 310 130 L 330 170 L 350 150 L 370 180 L 390 140 L 410 160 L 430 150" />
+    
+    <!-- Req/Sec Bar Chart -->
+    <text class="label" x="35" y="220">Request/sec</text>
+    <text class="value-left" x="35" y="245" font-size="24" fill="#58a6ff">2,450</text>
+    <g transform="translate(150, 245) scale(1.1, -1.1)">
+      <rect x="0" y="0" width="10" height="20" fill="#58a6ff" />
+      <rect x="15" y="0" width="10" height="35" fill="#58a6ff" />
+      <rect x="30" y="0" width="10" height="25" fill="#58a6ff" />
+      <rect x="45" y="0" width="10" height="40" fill="#58a6ff" />
+      <rect x="60" y="0" width="10" height="15" fill="#58a6ff" />
+      <rect x="75" y="0" width="10" height="50" fill="#58a6ff" />
+      <rect x="90" y="0" width="10" height="30" fill="#58a6ff" />
+      <rect x="105" y="0" width="10" height="45" fill="#58a6ff" />
+      <rect x="120" y="0" width="10" height="35" fill="#58a6ff" />
+    </g>
+  </g>
+
+  <!-- ============================================== -->
+  <!-- PANEL 2: SAST SONARQUBE (Top Right) -->
+  <!-- ============================================== -->
+  <g transform="translate(500, 30)">
+    <rect class="panel" width="470" height="260" />
+    <circle cx="20" cy="25" r="4" fill="#d29922" />
+    <text class="title" x="35" y="30">SAST: SonarQube &amp; Security</text>
+
+    <!-- Ratings -->
+    <g transform="translate(40, 70)">
+      <rect width="60" height="60" rx="8" fill="#1f2428" stroke="#3fb950" stroke-width="2" />
+      <text class="value-center" x="30" y="40" fill="#3fb950" font-size="34">A</text>
+      <text class="label-center" x="30" y="80">Reliability</text>
+    </g>
+
+    <g transform="translate(130, 70)">
+      <rect width="60" height="60" rx="8" fill="#1f2428" stroke="#3fb950" stroke-width="2" />
+      <text class="value-center" x="30" y="40" fill="#3fb950" font-size="34">A</text>
+      <text class="label-center" x="30" y="80">Security</text>
+    </g>
+
+    <g transform="translate(220, 70)">
+      <rect width="60" height="60" rx="8" fill="#1f2428" stroke="#58a6ff" stroke-width="2" />
+      <text class="value-center" x="30" y="40" fill="#58a6ff" font-size="24">94%</text>
+      <text class="label-center" x="30" y="80">Coverage</text>
+    </g>
+
+    <!-- Bug Metrics -->
+    <rect x="30" y="160" width="410" height="40" rx="6" fill="#0d1117" stroke="#21262d" />
+    
+    <!-- Segment 1: Bugs -->
+    <circle cx="45" cy="180" r="5" fill="#3fb950" />
+    <text class="label" x="55" y="184">Sec Bugs</text>
+    <text class="value-left" x="115" y="186" fill="#3fb950">0</text>
+
+    <!-- Segment 2: Code Smells -->
+    <circle cx="160" cy="180" r="5" fill="#d29922" />
+    <text class="label" x="170" y="184">Code Smells</text>
+    <text class="value-left" x="250" y="186" fill="#d29922">12</text>
+
+    <!-- Segment 3: Logic Err -->
+    <circle cx="300" cy="180" r="5" fill="#3fb950" />
+    <text class="label" x="310" y="184">Logic Err</text>
+    <text class="value-left" x="380" y="186" fill="#3fb950">0</text>
+
+    <!-- Scan Path -->
+    <path class="chart-line-blue chart-move" d="M 40 230 L 430 230" />
+    <text class="label" x="40" y="220" font-size="9">Pipeline: SCANNED_OK (2m ago)</text>
+  </g>
+</svg>
